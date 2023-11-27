@@ -1,0 +1,97 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+header{
+    width: 100%;
+    height: 100vh;
+    background-color: darkslateblue;
+    display: grid;
+    place-items: center;
+}
+
+header h1{
+    font-size: 3rem;
+    font-variant: small-caps;
+    text-decoration:underline;
+    text-shadow: 2px 1px 2px black;
+}
+
+.container{
+    border: 1px solid black;
+    overflow: hidden;
+    height: 60vh;
+    background-color: transparent;
+    width: 50%;
+    border-top: 17px solid black;
+    border-radius:29px;
+}
+
+div{
+    width: 10px;
+    height: 240px;
+    background-color: black;
+    display: flex;
+    justify-content: center;
+    gap: 31px;
+    position: relative;
+    border-radius: 5px;
+}
+
+.container div::after{
+    content: "";
+    width: 40px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: black;
+    position: absolute;
+    top: 95%;
+}
+
+.container div:first-child{
+    animation: left-cradle 2s linear  infinite;
+    transform-origin: top left;
+}
+@keyframes left-cradle{
+    0%{
+        rotate: 0deg;
+    }
+    25%{
+        rotate: 30deg;
+    }
+    50%{
+        rotate: 0;
+    }
+    75%{
+        rotate: 0deg;
+    }
+    100%{
+        rotate: 0;
+    }
+}
+
+
+.container div:last-child{
+    animation: right-cradle 2s linear 1.3s infinite;
+    transform-origin: top left;
+}
+@keyframes right-cradle{
+    0%{
+        rotate: 0deg;
+    }
+    25%{
+        rotate: -30deg;
+    }
+    50%{
+        rotate: 0deg;
+    }
+    75%{
+        rotate: 0deg;
+    }
+    100%{
+        rotate: 0deg;
+    }
+}
+
